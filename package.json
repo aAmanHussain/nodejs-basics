@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-basics",
+  "version": "1.0.0",
+  "description": "A basic nodejs server using minimum packages",
+  "main": "src/app/index.js",
+  "scripts": {
+    "start": "node src/app",
+    "serve": "nodemon"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "basics",
+    "of",
+    "nodejs"
+  ],
+  "author": "aAmanHussain",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
