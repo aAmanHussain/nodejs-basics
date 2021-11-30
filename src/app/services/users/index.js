@@ -23,7 +23,7 @@ class UserService {
         result: {
           id
         },
-        message: `User details fetched successfully`
+        message: `User details fetched successfully for ID: ${id}`
       };
     } catch ({ status, message }) {
       return {
@@ -35,13 +35,14 @@ class UserService {
   };
   post = async user => {
     try {
+      const result = {
+        id: Date.now(),
+        ...user
+      };
       return {
         status: HttpStatus.OK,
-        result: {
-          id: Symbol(),
-          ...user
-        },
-        message: `User created successfully`
+        result,
+        message: `User created successfully with ID: ${result.id}`
       };
     } catch ({ status, message }) {
       return {
@@ -58,7 +59,7 @@ class UserService {
         result: {
           id
         },
-        message: `User details updated successfully`
+        message: `User details updated successfully for ID: ${id}`
       };
     } catch ({ status, message }) {
       return {
@@ -75,7 +76,7 @@ class UserService {
         result: {
           id
         },
-        message: `User deleted successfully`
+        message: `User deleted successfully for ID: ${id}`
       };
     } catch ({ status, message }) {
       return {

@@ -23,7 +23,7 @@ class ProjectService {
         result: {
           id
         },
-        message: `Project details fetched successfully`
+        message: `Project details fetched successfully for ID: ${id}`
       };
     } catch ({ status, message }) {
       return {
@@ -35,13 +35,14 @@ class ProjectService {
   };
   post = async project => {
     try {
+      const result = {
+        id: Date.now(),
+        ...project
+      };
       return {
         status: HttpStatus.OK,
-        result: {
-          id: Symbol(),
-          ...project
-        },
-        message: `Project created successfully`
+        result,
+        message: `Project created successfully with ID: ${result.id}`
       };
     } catch ({ status, message }) {
       return {
@@ -58,7 +59,7 @@ class ProjectService {
         result: {
           id
         },
-        message: `Project details updated successfully`
+        message: `Project details updated successfully for ID: ${id}`
       };
     } catch ({ status, message }) {
       return {
@@ -75,7 +76,7 @@ class ProjectService {
         result: {
           id
         },
-        message: `Project deleted successfully`
+        message: `Project deleted successfully for ID: ${id}`
       };
     } catch ({ status, message }) {
       return {

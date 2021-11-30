@@ -1,5 +1,7 @@
 const { createServer } = require('http');
+const { LogMessageType } = require('./models');
 const { requestHandler } = require('./routes');
+const { loggerService } = require('./services');
 const { transformRequest, initEnvironment } = require('./utils');
 
 (() => {
@@ -23,6 +25,8 @@ const { transformRequest, initEnvironment } = require('./utils');
   server.on('upgrade', async (req, res) => console.log('upgrade'));
 
   server.listen(process.env.PORT, process.env.HOSTNAME, null, () => {
-    console.log(`Server started on PORT: ${process.env.PORT}`);
+    const message = `Server started on PORT: ${process.env.PORT} and HOST: ${process.env.HOSTNAME}`;
+    console.log(message);
+    loggerService.log(message, LogMessageType.info);
   });
 })();
