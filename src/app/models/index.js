@@ -13,7 +13,14 @@ const HttpMethods = {
   DELETE: 'DELETE'
 };
 
+const LogMessageType = {
+  error: 'error',
+  info: 'info',
+  warn: 'warn'
+};
+
 module.exports = {
   HttpStatus,
-  HttpMethods
+  HttpMethods,
+  LogMessageType
 };
