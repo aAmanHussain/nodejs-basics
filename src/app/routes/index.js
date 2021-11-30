@@ -33,7 +33,7 @@ const requestHandler = async (req, res) => {
       message: message || `Something went wrong`
     };
   } finally {
-    loggerService.log(response);
+    loggerService.generateLog(response);
     res.writeHead(response.status, { 'Content-type': 'application/json' });
     return res.end(JSON.stringify(response));
   }
