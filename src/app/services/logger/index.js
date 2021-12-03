@@ -14,7 +14,7 @@ class LoggerService {
         return;
       }
       const path = `${this.dirname}${type}.log`;
-      appendFile(path, `${message}\n`, err => {
+      appendFile(path, `${new Date().toISOString()} - ${message}\n`, err => {
         if (err) {
           this.log(err, LogMessageType.error);
         }
