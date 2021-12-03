@@ -5,7 +5,9 @@
   "main": "src/app/index.js",
   "scripts": {
     "start": "node src/app",
-    "serve": "nodemon"
+    "serve": "nodemon",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "node",
@@ -17,6 +19,7 @@
   "author": "aAmanHussain",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^27.4.3",
     "nodemon": "^2.0.15"
   }
 }
