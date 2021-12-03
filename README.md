@@ -1,4 +1,4 @@
-# NODEJS Basics
+# Basic Node Server
 
 As NODEJS platform has lots of built-in packages, this repo contains code to create a node server with minimum third-party packages.
 
