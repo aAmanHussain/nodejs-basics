@@ -1,4 +1,6 @@
 const { createServer } = require('http');
+const { fork, isMaster } = require('cluster');
+const { cpus } = require('os');
 const { LogMessageType } = require('./models');
 const { requestHandler } = require('./routes');
 const { loggerService } = require('./services');
@@ -6,6 +8,15 @@ const { transformRequest, initEnvironment } = require('./utils');
 
 (() => {
   initEnvironment();
+  const numOfCPUs = cpus();
+  if (isMaster && numOfCPUs && numOfCPUs.length) {
+    let i = 0;
+    while (i++ < numOfCPUs.length) {
+      fork();
+    }
+    return;
+  }
+
   const server = createServer((req, res) => {});
 
   server.on('checkContinue', async (req, res) => console.log('checkContinue'));
