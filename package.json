@@ -7,7 +7,8 @@
     "start": "node src/app",
     "serve": "nodemon",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "automate": "newman run src/api-tests/collections/v1.0.2.json -e src/api-tests/environments/v1.0.2.json"
   },
   "keywords": [
     "node",
@@ -20,6 +21,12 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.4.3",
+    "newman": "^5.3.0",
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.5.1",
+    "uuid": "^8.3.2"
   }
 }
