@@ -1,7 +1,7 @@
 const { HttpStatus, LogMessageType } = require('./../../models');
 const { appendFile } = require('fs');
 class LoggerService {
-  dirname = `${__dirname}../../../../../logs/`;
+  dirname = `${__dirname}../../../../logs/`;
   messageTypes = [
     LogMessageType.info,
     LogMessageType.warn,
