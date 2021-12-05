@@ -1,6 +1,6 @@
 {
   "name": "nodejs-basics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A basic nodejs server using minimum packages",
   "main": "src/app/index.js",
   "scripts": {
