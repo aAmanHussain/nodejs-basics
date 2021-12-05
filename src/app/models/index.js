@@ -1,26 +1,12 @@
-const HttpStatus = {
-  OK: 200,
-  NOT_FOUND: 404,
-  BAD_REQUEST: 400,
-  BAD_GATEWAY: 503
-};
-
-const HttpMethods = {
-  GET: 'GET',
-  POST: 'POST',
-  PATCH: 'PATCH',
-  PUT: 'PUT',
-  DELETE: 'DELETE'
-};
-
-const LogMessageType = {
-  error: 'error',
-  info: 'info',
-  warn: 'warn'
-};
+const { HttpMethods } = require('./http-methods.enum');
+const { HttpStatus } = require('./http-status.enum');
+const { LogMessageType } = require('./log-message-type.enum');
+const { Collections, Tables } = require('./database.enum');
 
 module.exports = {
   HttpStatus,
   HttpMethods,
-  LogMessageType
+  LogMessageType,
+  Collections,
+  Tables
 };
