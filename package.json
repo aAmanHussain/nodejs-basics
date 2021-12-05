@@ -1,6 +1,6 @@
 {
   "name": "nodejs-basics",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A basic nodejs server using minimum packages",
   "main": "src/app/index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "serve": "nodemon",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "automate": "newman run src/api-tests/collections/v1.0.2.json -e src/api-tests/environments/v1.0.2.json"
+    "automate": "newman run src/api-tests/collections/v%npm_package_version%.json -e src/api-tests/environments/v%npm_package_version%.json",
+    "automate:report": "newman run src/api-tests/collections/v%npm_package_version%.json -e src/api-tests/environments/v%npm_package_version%.json -r htmlextra --reporter-htmlextra-export src/api-tests/reports/v%npm_package_version%.html"
   },
   "keywords": [
     "node",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "jest": "^27.4.3",
     "newman": "^5.3.0",
+    "newman-reporter-htmlextra": "^1.22.3",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
